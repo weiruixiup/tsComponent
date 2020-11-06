@@ -1,0 +1,31 @@
+//sass的函数写法
+//使用时 引入 然后 @include fnName()
+
+//控制btn大小
+@mixin button-size($padding-x,$padding-y,$font-size,$border-radius) {
+  padding: $padding-x $padding-y;
+  font-size: $font-size;
+  border-radius: $border-radius;
+}
+
+//控制按钮颜色
+@mixin btn-style($bg-color,$border,$color,$hover-bg-color:lighten($bg-color,7.5%),$hover-border-color:lighten($bg-color,10%)) {
+  color: $color;
+  background: $bg-color;
+  border-color: $border;
+  &:hover {
+    color: $color;
+    background: $hover-bg-color;
+    border-color: $hover-border-color;
+  }
+  &:focus,&.focus {
+    color: $color;
+    background: $hover-bg-color;
+    border-color: $hover-border-color;
+  }
+  &:disabled,&.disabled {
+    color: $color;
+    background: $bg-color;
+    border-color: $border;
+  }
+}

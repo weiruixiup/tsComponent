@@ -1,0 +1,82 @@
+@import "src/assets/style/variable";
+@import "src/assets/style/mixin";
+//@import "@/assets/style/variable";
+//@import "./../../assets/style/variable";
+
+.cus-btn {
+  .btn {
+    position: relative;
+    display: inline-block;
+    //font-size: $font-size;
+    //border-radius: $b-radius;
+    //padding: 4px 15px;
+    line-height: 1.5;
+    color: $font-color;
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+    background-image: none;
+    border: 1px solid transparent;
+    transition: all linear .3s;
+    cursor: pointer;
+    @include button-size(4px, 15px, $font-size, $b-radius);
+    // 代表和 btn这个类 同层一起出现  className='btn disabled'
+    &.disabled,
+      // 代表是有btn这个类的dom 拥有 disabled这个属性
+    &[disabled] {
+      cursor: not-allowed;
+      opacity: .3;
+      box-shadow: none;
+
+      //所有子元素不解释事件
+      > * {
+        pointer-events: none;
+      }
+    }
+  }
+
+  .btn-primary {
+    @include btn-style($bg-primary, $bg-primary, $w-color)
+  }
+
+  .btn-default {
+    @include btn-style($default-color, $default-color, $w-color)
+  }
+
+  .btn-danger {
+    @include btn-style($bg-danger, $bg-danger, $w-color)
+  }
+
+  .btn-link {
+    @include btn-style($bg-primary, $bg-primary, $w-color)
+  }
+
+  .btn-lg {
+    @include button-size(6px, 18px, $font-size, $b-radius)
+  }
+
+  .btn-sm {
+    @include button-size(3px, 12px, $font-size, $b-radius)
+  }
+
+  .btn-link {
+    text-decoration: none;
+    box-shadow: none;
+
+    &:hover {
+      color: $bg-primary;
+      text-decoration: underline;
+    }
+
+    &:focus, &.focus {
+      color: $bg-primary;
+      text-decoration: none;
+    }
+
+    &:disabled, &.disabled {
+      color: $bg-primary;
+      text-decoration: none;
+      pointer-events: none;
+    }
+  }
+}

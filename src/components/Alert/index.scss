@@ -1,0 +1,66 @@
+.allowclose {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+.cus-alert {
+  margin-bottom: 16px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .alert {
+    padding: 8px 15px;
+    color: rgba(0, 0, 0, 0.85);
+    border-radius: 2px;
+    border: 1px solid transparent;
+    font-size: 14px;
+    transition: all linear .3s;
+
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+
+      .title {
+        padding-right: 16px;
+      }
+
+      .close {
+        cursor: pointer;
+        transition: all linear .3s;
+
+        &:hover {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .des {
+      padding-top: 16px;
+
+    }
+  }
+
+  .alert-success {
+    background: rgb(246, 255, 237);
+    border-color: rgb(183, 235, 143);
+  }
+
+  .alert-info {
+    background: rgb(230, 247, 255);
+    border-color: rgb(145, 213, 255);
+  }
+
+  .alert-error {
+    background: rgb(255, 242, 240);
+    border-color: rgb(255, 204, 199);
+  }
+
+  .alert-warning {
+    background: rgb(255, 251, 230);
+    border-color: rgb(255, 229, 143);
+  }
+}

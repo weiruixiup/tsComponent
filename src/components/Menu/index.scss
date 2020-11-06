@@ -1,0 +1,14 @@
+.cus-menu-ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 24px;
+  list-style: none;
+}
+
+.menu-vertical {
+  flex-direction: column;
+  border-bottom: 0;
+  margin-left: 24px;
+}
+
